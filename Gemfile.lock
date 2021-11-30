@@ -218,6 +218,7 @@ DEPENDENCIES
   capistrano-sidekiq
   capistrano3-delayed-job
   capistrano3-puma
+  daemons
   delayed_job_active_record
   json-schema (~> 2.7)
   jwt

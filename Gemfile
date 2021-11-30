@@ -26,6 +26,7 @@ gem 'rack-cors'
 gem 'jwt'
 gem 'json-schema', '~> 2.7'
 gem 'delayed_job_active_record'
+gem 'daemons'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
