@@ -1,24 +1,22 @@
-# README
+# Postman
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/485c4bc9f1f76e1c5e43?action=collection%2Fimport#?env%5BTest%5D=W3sia2V5IjoibG9jYWwiLCJ2YWx1ZSI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMSIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoidG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9XQ==)
 
-Things you may want to cover:
+# Ruby on Rails Api
 
-* Ruby version
+This application are a API-only Applications with PostgreSQL
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+* Ruby		2.7.0
+* Rails 	13.0.6
 
-* Database creation
+## Install & Run project
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+$ rails server
+```
