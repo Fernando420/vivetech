@@ -5,9 +5,11 @@ Rails.application.routes.draw do
       resources :sessions do
         collection do
           post :login
+          get :validate
         end
       end
       resources :products
+      resources :orders
     end
   end
 end

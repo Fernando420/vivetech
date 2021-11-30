@@ -1,9 +1,9 @@
 class Api::V1::ProductsController < ApplicationController
 
-  before_action :set_product, only: [:show, :update, :destroy]
+  before_action :set_product, only: [:show]
 
   def index
-    products = @user.products
+    products = @user.products.as_json(include: [:variants])
     response_method(true, products)
     response = ResponsesEngine.build!(params)
     render json: response, status: response[:code]
@@ -20,30 +20,10 @@ class Api::V1::ProductsController < ApplicationController
     return render json: badRequest(validate) if !validate.empty?
     product = @user.products.create(product_params)
     if product.valid?
-      UploadVariants.delay.save_variants(product,params[:variants])
+      UploadVariants.save_variants(product,params[:variants])
       response_method(true, product)
     else
       response_method(false, product.errors.full_messages)
-    end
-    response = ResponsesEngine.build!(params)
-    render json: response, status: response[:code]
-  end
-  
-  def update
-    if @product.update(product_params)
-      response_method(true, product)
-    else
-      response_method(false, "Product error successfully")
-    end
-    response = ResponsesEngine.build!(params)
-    render json: response, status: response[:code]
-  end
-  
-  def destroy
-    if @product.destroy
-      response_method(true, product)
-    else
-      response_method(false, "Product error deleted")
     end
     response = ResponsesEngine.build!(params)
     render json: response, status: response[:code]

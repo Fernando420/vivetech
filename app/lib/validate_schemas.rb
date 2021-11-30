@@ -11,6 +11,15 @@ module ValidateSchemas
     return e
   end
 
+  def self.create_order(params)
+    schema = File.read('./schemas/orders/create.json')
+    data = JSON::Validator.fully_validate(schema,params, :errors_as_objects => false)
+    data = error(data) if !data.empty?
+    return data
+  rescue JSON::Schema::ValidationError => e
+    return e
+  end
+
   def self.error(args)
     array = []
     args.each do |t|

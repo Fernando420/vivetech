@@ -30,16 +30,25 @@ ActiveRecord::Schema.define(version: 2021_11_29_201645) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+  create_table "orders", force: :cascade do |t|
     t.integer "correct", default: 0
     t.integer "incorrect", default: 0
     t.integer "total", default: 0
-    t.bigint "user_id"
     t.integer "status", default: 0
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.bigint "user_id"
+    t.bigint "order_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_products_on_order_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -49,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_201645) do
     t.string "password_digest"
     t.string "email"
     t.string "phone"
-    t.datetime "last_sign_in_at", default: "2021-11-30 01:45:28"
+    t.datetime "last_sign_in_at", default: "2021-11-30 05:57:06"
     t.integer "sign_in_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

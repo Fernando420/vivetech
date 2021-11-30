@@ -10,17 +10,9 @@ class UploadVariants
   end
 
   def create
-    self.product.total = self.variants.count
     variants.each do |variant|
-      sv = self.product.variants.create({name: variant[:name], price: variant[:price]})
-      if sv.valid?
-        self.product.correct = self.product.correct + 1 
-      else
-        self.product.incorrect = self.product.incorrect + 1 
-      end
+      self.product.variants.create({name: variant[:name], price: variant[:price]})
     end
-    self.product.status = 1
-    self.product.save
   end
 
   

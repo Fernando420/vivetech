@@ -1,6 +1,6 @@
 class Api::V1::SessionsController < ApplicationController
 
-  skip_before_action :authorized
+  skip_before_action :authorized, only: [:login]
   
   # LOGGING IN
   def login
@@ -12,6 +12,13 @@ class Api::V1::SessionsController < ApplicationController
     else
       response_method(false, "Invalid username or password")
     end
+    response = ResponsesEngine.build!(params)
+    render json: response, status: response[:code]
+  end
+
+  # Validate token
+  def validate
+    response_method(true,'Token Valid')
     response = ResponsesEngine.build!(params)
     render json: response, status: response[:code]
   end
