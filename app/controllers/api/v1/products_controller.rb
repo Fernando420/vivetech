@@ -20,7 +20,7 @@ class Api::V1::ProductsController < ApplicationController
     return render json: badRequest(validate) if !validate.empty?
     product = @user.products.create(product_params)
     if product.valid?
-      UploadVariants.save_variants(product,params[:variants])
+      UploadVariants.delay.save_variants(product,params[:variants])
       response_method(true, product)
     else
       response_method(false, product.errors.full_messages)

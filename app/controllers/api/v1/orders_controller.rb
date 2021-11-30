@@ -20,7 +20,7 @@ class Api::V1::OrdersController < ApplicationController
     return render json: badRequest(validate) if !validate.empty?
     order = @user.orders.create()
     if order.valid?
-      UploadProducts.save_product(request.parameters[:data],@user,order)
+      UploadProducts.delay.save_product(request.parameters[:data],@user,order)
       response_method(true, order)
     else
       response_method(false, order.errors.full_messages)
