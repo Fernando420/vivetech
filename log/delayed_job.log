@@ -1,0 +1,10 @@
+# Logfile created on 2021-11-29 14:17:39 -0600 by logger.rb/v1.4.3
+I, [2021-11-29T14:26:48.646465 #45254]  INFO -- : 2021-11-29T14:26:48-0600: [Worker(host:fernando-Z490GTA-EVO pid:45254)] Starting job worker
+I, [2021-11-29T14:26:48.683841 #45254]  INFO -- : 2021-11-29T14:26:48-0600: [Worker(host:fernando-Z490GTA-EVO pid:45254)] Job UploadVariants.save_variants (id=1) (queue=default) RUNNING
+I, [2021-11-29T14:26:48.711384 #45254]  INFO -- : 2021-11-29T14:26:48-0600: [Worker(host:fernando-Z490GTA-EVO pid:45254)] Job UploadVariants.save_variants (id=1) (queue=default) COMPLETED after 0.0275
+I, [2021-11-29T14:26:48.712730 #45254]  INFO -- : 2021-11-29T14:26:48-0600: [Worker(host:fernando-Z490GTA-EVO pid:45254)] 1 jobs processed at 15.1189 j/s, 0 failed
+I, [2021-11-29T14:38:26.126286 #45254]  INFO -- : 2021-11-29T14:38:26-0600: [Worker(host:fernando-Z490GTA-EVO pid:45254)] Exiting...
+I, [2021-11-29T20:20:13.905120 #97409]  INFO -- : 2021-11-29T20:20:13-0600: [Worker(host:fernando-Z490GTA-EVO pid:97409)] Starting job worker
+I, [2021-11-29T20:20:13.941727 #97409]  INFO -- : 2021-11-29T20:20:13-0600: [Worker(host:fernando-Z490GTA-EVO pid:97409)] Job UploadVariants.save_variants (id=1) (queue=default) RUNNING
+I, [2021-11-29T20:20:13.974188 #97409]  INFO -- : 2021-11-29T20:20:13-0600: [Worker(host:fernando-Z490GTA-EVO pid:97409)] Job UploadVariants.save_variants (id=1) (queue=default) COMPLETED after 0.0324
+I, [2021-11-29T20:20:13.975522 #97409]  INFO -- : 2021-11-29T20:20:13-0600: [Worker(host:fernando-Z490GTA-EVO pid:97409)] 1 jobs processed at 14.2283 j/s, 0 failed
