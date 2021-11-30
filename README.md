@@ -20,3 +20,8 @@ $ rails db:migrate
 $ rails db:seed
 $ rails server
 ```
+
+## User
+
+* Username: Admin
+* Password: D3mo$Admin
