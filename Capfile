@@ -10,7 +10,6 @@ require 'capistrano/rvm'
 require 'capistrano/puma'
 require 'capistrano/rake'
 require 'capistrano/delayed_job'
-require "whenever/capistrano"
 install_plugin Capistrano::Puma
 # require 'capistrano/dotenv'
 
